@@ -21,11 +21,7 @@ pipeline {
       }
       steps {
         echo "testing the task1 with ${mysql_new_user}"
-        withCredentials([
-          usernamePassword(credentials: 'database-credentilas', usernameVariable: USER, passwordVariable: PWD) ])
-        {
-          sh "some script ${USER} ${PWD}"
-      }
+        
       }
     }
     
@@ -37,11 +33,7 @@ pipeline {
       steps{
         script {
             echo "testing the task2"
-           withCredentials([
-          usernamePassword(credentials: 'database-credentilas', usernameVariable: USER, passwordVariable: PWD) ])
-        {
-          sh "some script ${USER} ${PWD}"
-      }
+           
         }
       }
     }
@@ -54,12 +46,7 @@ pipeline {
       steps{
         script {
             echo "testing the task3" 
-           withCredentials([
-          usernamePassword(credentials: 'database-credentilas', usernameVariable: USER, passwordVariable: PWD) ])
-        {
-          sh "some script ${USER} ${PWD}"
-      }
-
+        
           }
         }
       }        
