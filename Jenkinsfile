@@ -6,7 +6,7 @@ pipeline {
   }
 
   parameters {
-    choice(name: 'TASK',choices: ['task_1','task_2','task_3'],description: "task number are according to assignment details")
+    choice(name: 'TASK',choices: ['task_1','task_2','task_3'],description: 'task number are according to assignment details')
   }
 
    agent any
@@ -14,24 +14,25 @@ pipeline {
   stages {
     
     
-    stage('task1') {
+    stage("task1") {
       when {
         expression {
-          ${params.TASK} == 'task_1'}
+          params.TASK == "task_1"}
       }
       steps {
-        echo "testing the task1 with ${mysql_root_user}"
+        echo "testing the task1 with ${mysql_new_user}"
         withCredentials([
           usernamePassword(credentials: 'database-credentilas', usernameVariable: USER, passwordVariable: PWD) ])
         {
           sh "some script ${USER} ${PWD}"
-      }}
+      }
+      }
     }
     
-    stage('task2') {
-            when {
+    stage("task2") {
+       when {
         expression {
-          ${params.TASK} == 'task_2'}
+          params.TASK == "task_2"}
       }
       steps{
         script {
@@ -45,10 +46,10 @@ pipeline {
       }
     }
     
-    stage('task3') {
+    stage("task3") {
             when {
         expression {
-          ${params.TASK} == 'task_3'}
+          params.TASK == 'task_3'}
       }
       steps{
         script {
