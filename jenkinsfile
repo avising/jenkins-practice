@@ -1,0 +1,34 @@
+pipeline {
+
+  environment {
+    mysql_root_user = "root"
+    mysql_root_password = "avinashsingh"
+  }
+
+   agent any
+
+
+  stages {
+    stage('task1') {
+      steps {
+            echo "testing the task1"
+      }
+    }
+    stage('task2') {
+      steps{
+        script {
+            echo "testing the task2"
+
+        }
+      }
+    }
+    stage('task3') {
+      steps{
+        script {
+            echo "testing the task3"
+
+          }
+        }
+      }        
+  }  
+}
