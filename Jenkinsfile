@@ -21,7 +21,7 @@ pipeline {
       }
       steps {
         echo "Running task 1"
-        sh 'mysql -u root -pavinashsingh -D testdb -e "INSERT INTO contact (Firstname, Lastname,Phone,Mobile, email) VALUES ('Cardinal','Erichsen','Skagen 21','Stavanger','4006');"'
+        sh 'mysql -u root -pavinashsingh -D testdb -e "INSERT INTO contact (Firstname, Lastname,Phone,Mobile, email) VALUES ("Cardinal","Erichsen","Skagen 21","Stavanger","4006");"'
         
       }
     }
