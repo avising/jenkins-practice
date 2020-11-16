@@ -20,7 +20,8 @@ pipeline {
           params.TASK == "task_1"}
       }
       steps {
-        echo "testing the task1 with ${mysql_new_user}"
+        echo "Running task 1"
+        sh "mysql -h localhost -uroot -pavinashsingh contact -e 'INSERT INTO contact VALUES ('Avinash','Singh','9999999999','9999999999','avi@gmail.com');' "
         
       }
     }
